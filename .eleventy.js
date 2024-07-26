@@ -12,9 +12,7 @@ module.exports = function (eleventyConfig) {
   // For Obsidian wikilinks integration
   eleventyConfig.addPlugin(wikilinks);
 
-  eleventyConfig.addGlobalData("permalink", () => {
-    return (data) => `${baseUrl}${data.page.fileSlug}/index.html`;
-  });
+
 
   eleventyConfig.addTransform("image-embeds", function(content, outputPath) {
     if (outputPath && outputPath.endsWith(".html")) {
