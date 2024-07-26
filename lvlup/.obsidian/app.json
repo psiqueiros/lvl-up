@@ -1,0 +1,12 @@
+{
+  "promptDelete": false,
+  "userIgnoreFilters": [
+    "quartz/docs/",
+    "quartz/node_modules/",
+    "quartz/quartz/"
+  ],
+  "vimMode": true,
+  "showInlineTitle": false,
+  "alwaysUpdateLinks": true,
+  "useMarkdownLinks": false
+}
