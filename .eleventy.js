@@ -2,6 +2,7 @@ const pluginWebc = require("@11ty/eleventy-plugin-webc");
 const wikilinks = require('./wikilinks.js');
 
 const isProduction = process.env.NODE_ENV === 'production';
+const baseUrl = isProduction ? '/' : '/';
 
 
 module.exports = function (eleventyConfig) {
