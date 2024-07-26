@@ -2,7 +2,6 @@ const pluginWebc = require("@11ty/eleventy-plugin-webc");
 const wikilinks = require('./wikilinks.js');
 
 const isProduction = process.env.NODE_ENV === 'production';
-const baseUrl = isProduction ? '/' : '/';
 
 
 module.exports = function (eleventyConfig) {
@@ -12,7 +11,9 @@ module.exports = function (eleventyConfig) {
   // For Obsidian wikilinks integration
   eleventyConfig.addPlugin(wikilinks);
 
-
+  eleventyConfig.addGlobalData("permalink", () => {
+    return (data) => `${data.page.fileSlug}/index.html`;
+  });
 
   eleventyConfig.addTransform("image-embeds", function(content, outputPath) {
     if (outputPath && outputPath.endsWith(".html")) {
