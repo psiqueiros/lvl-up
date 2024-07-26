@@ -2,12 +2,8 @@ const pluginWebc = require("@11ty/eleventy-plugin-webc");
 const wikilinks = require('./wikilinks.js');
 
 const isProduction = process.env.NODE_ENV === 'production';
-const baseUrl = '';
+const baseUrl = isProduction ? '/' : '/';
 
-console.log(`Environment: ${process.env.NODE_ENV}`);
-console.log(`Base URL: ${baseUrl}`);
-console.log(`Input Directory: lvlup`);
-console.log(`Output Directory: _site`);
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(pluginWebc);
