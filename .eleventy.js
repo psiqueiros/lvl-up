@@ -19,7 +19,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addTransform("image-embeds", function(content, outputPath) {
     if (outputPath && outputPath.endsWith(".html")) {
       return content.replace(/!\[\[(.*?)\]\]/g, function(match, p1) {
-        return `<img src="${baseUrl}images/${p1}" alt="${p1}">`;
+        return `<img src="../images/${p1}" alt="${p1}">`;
       });
     }
     return content;

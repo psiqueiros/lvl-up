@@ -1,5 +1,5 @@
 const isProduction = process.env.NODE_ENV === 'production';
-const baseUrl = isProduction ? '/lvl-up/' : '/lvl-up/';
+const baseUrl = isProduction ? '/lvl-up/' : '/';
 
 module.exports = function(eleventyConfig) {
   eleventyConfig.addTransform("wikilinks", function(content, outputPath) {
@@ -13,4 +13,5 @@ module.exports = function(eleventyConfig) {
     }
     return content;
   });
+
 };
