@@ -1,5 +1,5 @@
 const isProduction = process.env.NODE_ENV === 'production';
-const baseUrl = isProduction ? '/your-repo-name/' : '/';
+const baseUrl = isProduction ? '/lvl-up/' : '/';
 
 module.exports = function(eleventyConfig) {
   eleventyConfig.addTransform("wikilinks", function(content, outputPath) {
