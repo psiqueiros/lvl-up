@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "linktest.md",
+                "file": "note1.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "linktest.md",
+                "file": "note1.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "linktest.md",
+                "file": "note1.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "linktest.md"
+                "file": "note1.md"
               }
             }
           }
@@ -148,8 +148,9 @@
   },
   "active": "d398f6e5da878dfc",
   "lastOpenFiles": [
-    "Note1.md",
     "linktest.md",
+    "note1.md",
+    "index.webc",
     "images",
     "images/cat.png",
     "cat.png.crdownload",
@@ -172,7 +173,6 @@
     "quartz/public/fonts/PressStart2P-Regular.ttf",
     "quartz/public/fonts",
     "quartz/public/tags/private.html",
-    "quartz/public/tags/index.html",
     "quartz/content/index.md",
     "quartz/content/Visualizer.md",
     "quartz/quartz/static/Felipe1mirror.png",

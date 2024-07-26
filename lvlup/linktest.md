@@ -4,6 +4,6 @@ title: testing links
 ---
 ### let it work, pls!
 
-[[Note1]]
+[[note1]]
 
 [[index]]
