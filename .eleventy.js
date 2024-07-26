@@ -1,6 +1,8 @@
 const pluginWebc = require("@11ty/eleventy-plugin-webc");
 const wikilinks = require('./wikilinks.js');
 
+const isProduction = process.env.NODE_ENV === 'production';
+const baseUrl = isProduction ? '/lvl-up/' : '/';
 
 module.exports = function (eleventyConfig) {
 	eleventyConfig.addPlugin(pluginWebc);
@@ -8,13 +10,15 @@ module.exports = function (eleventyConfig) {
 
     //for Obsidian wikilinks integration
     eleventyConfig.addPlugin(wikilinks);
+
     eleventyConfig.addGlobalData("permalink", () => {
-        return (data) => `/${data.page.fileSlug}/index.html`;
+        return (data) => `${baseUrl}${data.page.fileSlug}/index.html`;
     });
+    
     eleventyConfig.addTransform("image-embeds", function(content, outputPath) {
-        if(outputPath && outputPath.endsWith(".html")) {
+        if (outputPath && outputPath.endsWith(".html")) {
             return content.replace(/!\[\[(.*?)\]\]/g, function(match, p1) {
-                return `<img src="/images/${p1}" alt="${p1}">`;
+                return `<img src="${baseUrl}images/${p1}" alt="${p1}">`;
             });}
             return content;
         });
