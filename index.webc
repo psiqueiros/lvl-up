@@ -1,0 +1,7 @@
+---
+layout: layout.webc
+title: This is my root webc index
+---
+
+<p>just some text to test</p>
+<p>more text</p>
