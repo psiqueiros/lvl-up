@@ -1,5 +1,5 @@
 
 [[note1]]
-[[Note 2]]
+[[Note2]]
 [[Note 4]]
 [[Note 5]]
