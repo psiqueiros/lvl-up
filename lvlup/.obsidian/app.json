@@ -8,5 +8,6 @@
   "vimMode": true,
   "showInlineTitle": false,
   "alwaysUpdateLinks": true,
-  "useMarkdownLinks": false
+  "useMarkdownLinks": false,
+  "showUnsupportedFiles": true
 }

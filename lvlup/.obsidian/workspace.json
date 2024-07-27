@@ -13,13 +13,14 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "note1.md",
+                "file": "index.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ]
+        ],
+        "stacked": true
       }
     ],
     "direction": "vertical"
@@ -85,7 +86,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "note1.md",
+                "file": "index.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +103,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "note1.md",
+                "file": "index.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +126,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "note1.md"
+                "file": "index.md"
               }
             }
           }
@@ -148,6 +149,12 @@
   },
   "active": "d398f6e5da878dfc",
   "lastOpenFiles": [
+    "Note 5.md",
+    "index.md",
+    "Note 4.md",
+    "Note 3.md",
+    "Note 1.md",
+    "Note 2.md",
     "linktest.md",
     "note1.md",
     "index.webc",
@@ -187,11 +194,6 @@
     "whatever.md",
     "quartz/README.md",
     "quartz/node_modules/mathjax-full/README.md",
-    "quartz/node_modules/mathjax-full/CONTRIBUTING.md",
-    "quartz/node_modules/tsx/node_modules/@esbuild/linux-x64/README.md",
-    "quartz/node_modules/@esbuild/linux-x64/README.md",
-    "quartz/node_modules/css-tree/README.md",
-    "quartz/node_modules/flexsearch/README.md",
-    "quartz/node_modules/flexsearch/CHANGELOG.md"
+    "quartz/node_modules/mathjax-full/CONTRIBUTING.md"
   ]
 }
