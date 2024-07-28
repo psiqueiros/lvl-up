@@ -5,7 +5,7 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(pluginWebc,{
     components: "_includes/webc/*.webc"
   });
-  
+
   eleventyConfig.setTemplateFormats(["webc", "html", "md", "njk"]);
 
   // Global permalink data
@@ -16,7 +16,7 @@ module.exports = function (eleventyConfig) {
   // Ensure no nested directories
   return {
     dir: {
-      input: "src",
+      input: "input",
       output: "_site",
       includes: "../_includes",
     },
