@@ -9,4 +9,4 @@ think of it as a moc I guess
 [[note-2]]
 [[note-3]]
 [[note-4]]
-[[note-5]]
+[[note-5|This is the display text for the link c:]]
