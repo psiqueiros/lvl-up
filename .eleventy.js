@@ -1,27 +1,12 @@
 // .eleventy.js
 const pluginWebc = require("@11ty/eleventy-plugin-webc");
-const obsidianstuff = require('./obsidianstuff');
-const { baseUrl } = require('./config');
 
 module.exports = function (eleventyConfig) {
-  eleventyConfig.addPlugin(pluginWebc);
+  eleventyConfig.addPlugin(pluginWebc,{
+    components: "_includes/webc/*.webc"
+  });
+  
   eleventyConfig.setTemplateFormats(["webc", "html", "md", "njk"]);
-
-  // Custom filter to transform filenames
-  eleventyConfig.addFilter("transformFilename", function(filename) {
-    return filename.trim().toLowerCase().replace(/\s+/g, "-");
-  });
-
-  // Custom collection to apply the filter to filenames
-  eleventyConfig.addCollection("filteredPages", function(collectionApi) {
-    return collectionApi.getAll().map(item => {
-      item.fileSlug = eleventyConfig.getFilter("transformFilename")(item.fileSlug);
-      return item;
-    });
-  });
-
-  // Obsidian syntax handling
-  eleventyConfig.addPlugin(obsidianstuff);
 
   // Global permalink data
   eleventyConfig.addGlobalData("permalink", () => {
@@ -31,7 +16,7 @@ module.exports = function (eleventyConfig) {
   // Ensure no nested directories
   return {
     dir: {
-      input: "lvlup",
+      input: "src",
       output: "_site",
       includes: "../_includes",
     },

@@ -8,6 +8,7 @@
 	</head>
 
 	<body @raw="content">
-    </body>
+		
+	</body>
 
 </html>

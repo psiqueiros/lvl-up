@@ -1,0 +1,7 @@
+<div id="dialogbox"></div>
+<div id="arrow"></div>
+
+<link rel="stylesheet" href="/_includes/css/textbox.css" webc:keep>
+<script src="/_includes/js/textbox.js" webc:keep></script>
+
+<slot></slot>
