@@ -14,6 +14,14 @@ module.exports = function (eleventyConfig) {
   });
 
   eleventyConfig.addPassthroughCopy("input/img");
+    // Set a custom base URL for production
+  
+  if (process.env.NODE_ENV === "production") {
+    eleventyConfig.addGlobalData("baseUrl", "/lvl-up/");
+  } else {
+    eleventyConfig.addGlobalData("baseUrl", "/");
+  }
+
 
   // Ensure no nested directories
   return {

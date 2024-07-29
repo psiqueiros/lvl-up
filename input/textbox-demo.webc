@@ -1,9 +1,0 @@
----
-layout: base.webc
-title: glowy text box
----
-
-<textbox class="textbox">
-    <img slot="character" src="/img/fersi-green.png" alt="my internet ghost" class="character">
-    Message 1 | Message 2 | Message 3
-</textbox>
