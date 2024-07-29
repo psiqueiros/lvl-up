@@ -1,55 +1,68 @@
+<slot name="character"></slot>
 <div class="dialogue-box" id="dialogueBox"><slot></slot></div>
 
+
 <style webc:keep>
-  .dialogue-box {
-    background-color: #000;
-    border: 2px solid #0f0;
-    color: #0f0;
-    font-family: 'Courier New', monospace;
-    font-size: 16px;
-    line-height: 1.5;
-    padding: 15px;
-    width: fit-content;
-    min-width: 200px;
-    min-height: 2rem;
-    margin: 20px auto;
-    box-shadow: 0 0 10px #0f0;
-    text-shadow: 0 0 5px #0f0;
-    position: relative;
-    overflow: hidden;
-  }
 
-  .dialogue-box::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: repeating-linear-gradient(
-      0deg,
-      rgba(0, 255, 0, 0.15),
-      rgba(0, 255, 0, 0.15) 1px,
-      transparent 1px,
-      transparent 2px
-    );
-    pointer-events: none;
-  }
+.textbox {
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  width: 99vw;
+  left: -2vw;
+}
 
-  .cursor {
-    display: inline-block;
-    width: 10px;
-    height: 18px;
-    background-color: #0f0;
-    animation: blink 0.7s step-end infinite;
-    vertical-align: bottom;
-    margin-left: 2px;
-  }
+.character {
+  max-height: 25vh;
+}
 
-  @keyframes blink {
-    from, to { opacity: 1; }
-    50% { opacity: 0; }
-  }
+.dialogue-box {
+  background-color: #000;
+  border: 2px solid #0f0;
+  color: #0f0;
+  font-family: 'Courier New', monospace;
+  font-size: 16pmaxx;
+  line-height: 1.5;
+  box-shadow: 0 0 10px #0f0;
+  text-shadow: 0 0 5px #0f0;
+  overflow: hidden;
+
+  align-self: flex-end;
+
+  min-height: 4rem;
+  padding: 1rem;
+  width: 100%;
+  margin-bottom: 5vh;
+}
+.dialogue-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 255, 0, 0.15),
+    rgba(0, 255, 0, 0.15) 1px,
+    transparent 1px,
+    transparent 2px
+  );
+  pointer-events: none;
+}
+.cursor {
+  display: inline-block;
+  width: 10px;
+  height: 18px;
+  background-color: #0f0;
+  animation: blink 0.7s step-end infinite;
+  vertical-align: bottom;
+  margin-left: 2px;
+}
+@keyframes blink {
+  from, to { opacity: 1; }
+  50% { opacity: 0; }
+}
 </style>
 
 <script webc:keep>

@@ -6,7 +6,22 @@
         <title @text="title"></title>
         <meta name="Fersi" content="Fersi">
         <link rel="icon" href="/favicon.ico" type="image/x-icon">
-        <link rel="stylesheet" href="base.scss">
+        
+        <style webc:keep>
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: black;
+            color: white;
+        }
+
+        h1 {
+            color: #0f0;
+            font-family: sans-serif;
+        }
+        </style>
     </head>
     <body @raw="content">
 

@@ -13,6 +13,8 @@ module.exports = function (eleventyConfig) {
     return (data) => `${data.page.fileSlug}/index.html`;
   });
 
+  eleventyConfig.addPassthroughCopy("input/img");
+
   // Ensure no nested directories
   return {
     dir: {

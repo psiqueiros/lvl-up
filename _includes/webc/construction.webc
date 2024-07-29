@@ -1,0 +1,22 @@
+
+<img src="/img/underConstruction.gif" alt="Under Construction">
+<img src="/img/silverstarConstruction.gif" alt="Pls wait till it's done c:">
+
+<style webc:keep>
+    .construction {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        flex-direction: column; /* Stack images vertically */
+        align-items: center;   /* Center images horizontally */
+        max-width: 100vw;
+        max-height: 100vh;     /* Ensure it doesn't exceed viewport height */
+    }
+    .construction img {
+        max-width: 100%;       /* Scale images to fit within container */
+        height: auto;          /* Maintain aspect ratio */
+        margin: 0;             /* Remove any default margins */
+    }
+</style>
