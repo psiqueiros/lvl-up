@@ -7,8 +7,6 @@
 .textbox {
   display: flex;
   position: fixed;
-  bottom: 0;
-  left: 0;  /* Changed from -10px to 0 */
   width: 100vw;
   padding: 10px;  /* Added padding */
   padding-left: 0;
