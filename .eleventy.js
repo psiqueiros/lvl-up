@@ -4,7 +4,15 @@ const baseUrl = process.env.NODE_ENV === "production" ? "/lvl-up/" : "/";
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(pluginWebc,{
-    components: "_includes/webc/**/*.webc"
+    components: "_includes/webc/**/*.webc",
+    		// Adds an Eleventy WebC transform to process all HTML output
+		useTransform: false,
+
+		// Additional global data used in the Eleventy WebC transform
+		transformData: {},
+
+		// Options passed to @11ty/eleventy-plugin-bundle
+		bundlePluginOptions: {},
   });
 
   eleventyConfig.setTemplateFormats(["webc", "html", "md", "njk"]);
