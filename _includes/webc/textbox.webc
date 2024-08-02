@@ -1,44 +1,25 @@
-<slot name="character"></slot>
-<div class="dialogue-box" id="dialogueBox"><slot></slot></div>
+
+<div class="dialogue-box">
+  <slot></slot>
+</div>
 
 
 <style webc:keep>
-
-.textbox {
-  display: flex;
-  position: fixed;
-  width: 100vw;
-  padding: 10px;  /* Added padding */
-  padding-left: 0;
-  box-sizing: border-box;  /* Added to include padding in width calculation */
-}
-
-.character {
-  max-height: 25vh;
-}
-
 .dialogue-box {
   color: rgb(0, 247, 255);
   font-family: 'Courier New', monospace;
-  font-size: 16px;  /* Fixed typo: was 16pmaxx */
+  font-size: 16px;
   line-height: 1.5;
   text-shadow: 0 0 5px rgb(0, 247, 255);
   overflow: hidden;
-  align-self: flex-end;
-  min-height: 4rem;
-  padding: 1rem;
-  width: 100%;
-  margin-bottom: 0;  /* Changed from 10px to 0 */
-  position: relative;  /* Added to contain absolutely positioned ::before */
 }
-
 .cursor {
   display: inline-block;
   width: 10px;
   height: 18px;
   background-color: rgb(0, 247, 255);
   animation: blink 0.7s step-end infinite;
-  vertical-align: bottom;
+  vertical-align: center;
   margin-left: 2px;
 }
 @keyframes blink {
@@ -47,65 +28,61 @@
 }
 </style>
 
+
 <script webc:keep>
   const typingSpeed = 30;
-  let dialogueBox, messages, currentMessageIndex, isTyping, cursor;
-
-  document.addEventListener("DOMContentLoaded", () => {
-    dialogueBox = document.getElementById("dialogueBox");
-    messages = dialogueBox.innerHTML.split('|');
+  function initDialogueBox(dialogueBox) {
+    let messages = dialogueBox.innerHTML.split('|');
     dialogueBox.innerHTML = "";
-    currentMessageIndex = 0;
-    isTyping = false;
-    cursor = document.createElement("span");
+    let currentMessageIndex = 0;
+    let isTyping = false;
+    let cursor = document.createElement("span");
     cursor.className = "cursor";
     
-    nextMessage();
-
+    function handleInteraction() {
+      if (isTyping) {
+        completeMessage();
+      } else {
+        nextMessage();
+      }
+    }
+    function nextMessage() {
+      if (currentMessageIndex >= messages.length) {
+        currentMessageIndex = 0;
+      }
+      typeMessage(messages[currentMessageIndex]);
+      currentMessageIndex++;
+    }
+    function typeMessage(message) {
+      isTyping = true;
+      dialogueBox.innerHTML = "";
+      let i = 0;
+      function typeChar() {
+        if (i < message.length) {
+          dialogueBox.innerHTML += message.charAt(i);
+          i++;
+          setTimeout(typeChar, typingSpeed);
+        } else {
+          isTyping = false;
+          dialogueBox.appendChild(cursor);
+        }
+      }
+      typeChar();
+    }
+    function completeMessage() {
+      isTyping = false;
+      dialogueBox.innerHTML = messages[currentMessageIndex - 1];
+      dialogueBox.appendChild(cursor);
+    }
     dialogueBox.addEventListener("click", handleInteraction);
     document.addEventListener("keydown", (e) => {
       if (e.key === 'Enter' || e.key === ' ') {
         handleInteraction();
       }
     });
+    nextMessage();
+  }
+  document.addEventListener("DOMContentLoaded", () => {
+    document.querySelectorAll('.dialogue-box').forEach(initDialogueBox);
   });
-
-  function handleInteraction() {
-    if (isTyping) {
-      completeMessage();
-    } else {
-      nextMessage();
-    }
-  }
-
-  function nextMessage() {
-    if (currentMessageIndex >= messages.length) {
-      currentMessageIndex = 0;
-    }
-    typeMessage(messages[currentMessageIndex]);
-    currentMessageIndex++;
-  }
-
-  function typeMessage(message) {
-    isTyping = true;
-    dialogueBox.innerHTML = "";
-    let i = 0;
-    function typeChar() {
-      if (i < message.length) {
-        dialogueBox.innerHTML += message.charAt(i);
-        i++;
-        setTimeout(typeChar, typingSpeed);
-      } else {
-        isTyping = false;
-        dialogueBox.appendChild(cursor);
-      }
-    }
-    typeChar();
-  }
-
-  function completeMessage() {
-    isTyping = false;
-    dialogueBox.innerHTML = messages[currentMessageIndex - 1];
-    dialogueBox.appendChild(cursor);
-  }
 </script>

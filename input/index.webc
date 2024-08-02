@@ -3,7 +3,18 @@ layout: crt.webc
 title: lvl-up 
 ---
 
-<textbox class="textbox">
-    <img slot="character" class="character" :src="baseUrl + 'img/fersi-green.png'" alt="my internet ghost">
-    Helloooooooo............. | mssg 1 | mssg 2 | mssg3 | just testing stuff here c:
+<panel>
+<textbox>
+  msg 1 | mssg 2 | mssg 3
 </textbox>
+</panel>
+<panel>
+<textbox>
+  msg 1 | mssg 2 | mssg 3
+</textbox>
+</panel>
+<panel>
+<textbox>
+  msg 1 | mssg 2 | mssg 3
+</textbox>
+</panel>
